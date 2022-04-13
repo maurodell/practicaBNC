@@ -49,8 +49,8 @@ namespace Ejercicio_BCO
             // 
             // agregarCliente
             // 
-            this.agregarCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.agregarCliente.Location = new System.Drawing.Point(46, 828);
+            this.agregarCliente.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.agregarCliente.Location = new System.Drawing.Point(46, 837);
             this.agregarCliente.Name = "agregarCliente";
             this.agregarCliente.Size = new System.Drawing.Size(224, 53);
             this.agregarCliente.TabIndex = 2;
@@ -60,8 +60,8 @@ namespace Ejercicio_BCO
             // 
             // modificarCliente
             // 
-            this.modificarCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.modificarCliente.Location = new System.Drawing.Point(309, 828);
+            this.modificarCliente.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.modificarCliente.Location = new System.Drawing.Point(309, 837);
             this.modificarCliente.Name = "modificarCliente";
             this.modificarCliente.Size = new System.Drawing.Size(224, 53);
             this.modificarCliente.TabIndex = 3;
@@ -70,8 +70,8 @@ namespace Ejercicio_BCO
             // 
             // eliminarCliente
             // 
-            this.eliminarCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.eliminarCliente.Location = new System.Drawing.Point(566, 828);
+            this.eliminarCliente.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.eliminarCliente.Location = new System.Drawing.Point(566, 837);
             this.eliminarCliente.Name = "eliminarCliente";
             this.eliminarCliente.Size = new System.Drawing.Size(224, 53);
             this.eliminarCliente.TabIndex = 4;
@@ -80,8 +80,8 @@ namespace Ejercicio_BCO
             // 
             // consultarCliente
             // 
-            this.consultarCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.consultarCliente.Location = new System.Drawing.Point(836, 828);
+            this.consultarCliente.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.consultarCliente.Location = new System.Drawing.Point(836, 837);
             this.consultarCliente.Name = "consultarCliente";
             this.consultarCliente.Size = new System.Drawing.Size(224, 53);
             this.consultarCliente.TabIndex = 5;
@@ -94,12 +94,12 @@ namespace Ejercicio_BCO
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(46, 114);
+            this.dataGridView1.Location = new System.Drawing.Point(56, 118);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 102;
             this.dataGridView1.RowTemplate.Height = 40;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(3035, 682);
+            this.dataGridView1.Size = new System.Drawing.Size(2306, 563);
             this.dataGridView1.TabIndex = 6;
             // 
             // frmClientes
@@ -107,7 +107,7 @@ namespace Ejercicio_BCO
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(3144, 980);
+            this.ClientSize = new System.Drawing.Size(2426, 999);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.consultarCliente);
             this.Controls.Add(this.eliminarCliente);

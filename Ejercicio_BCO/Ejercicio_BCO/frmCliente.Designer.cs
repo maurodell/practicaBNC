@@ -166,7 +166,7 @@ namespace Ejercicio_BCO
             this.btnAddCliente.Name = "btnAddCliente";
             this.btnAddCliente.Size = new System.Drawing.Size(181, 69);
             this.btnAddCliente.TabIndex = 14;
-            this.btnAddCliente.Text = "Agregar";
+            this.btnAddCliente.Text = "Guardar";
             this.btnAddCliente.UseVisualStyleBackColor = true;
             this.btnAddCliente.Click += new System.EventHandler(this.btnAddCliente_Click);
             // 

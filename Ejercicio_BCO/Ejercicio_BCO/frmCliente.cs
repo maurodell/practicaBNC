@@ -15,8 +15,6 @@ namespace Ejercicio_BCO
     {
         Cliente _cliente;
         Banco _banco;
-
-        List<Cliente> listaC = new List<Cliente>();
         public frmCliente()
         {
             InitializeComponent();
@@ -35,7 +33,6 @@ namespace Ejercicio_BCO
             textBox6.Text = Convert.ToString(_cliente.pEdad);
 
             _banco.Clientes.Add(_cliente);
-            listaC.Add(_cliente);
             this.DialogResult = DialogResult.OK;
         }
 
