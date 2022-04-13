@@ -67,6 +67,7 @@ namespace Ejercicio_BCO
             this.modificarCliente.TabIndex = 3;
             this.modificarCliente.Text = "Modificar";
             this.modificarCliente.UseVisualStyleBackColor = true;
+            this.modificarCliente.Click += new System.EventHandler(this.modificarCliente_Click);
             // 
             // eliminarCliente
             // 

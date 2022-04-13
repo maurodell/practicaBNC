@@ -14,6 +14,7 @@ namespace Ejercicio_BCO
     public partial class frmClientes : Form
     {
         Banco _banco;
+        frmCliente ClienteAdd;
         public frmClientes()
         {
             InitializeComponent();
@@ -27,8 +28,7 @@ namespace Ejercicio_BCO
 
         private void agregarCliente_Click(object sender, EventArgs e)
         {
-            frmCliente ClienteAdd = new frmCliente();
-            
+            ClienteAdd = new frmCliente();
             DialogResult resp = ClienteAdd.ShowDialog();
             ClienteAdd.Show();
             if (resp == DialogResult.OK)
@@ -42,6 +42,20 @@ namespace Ejercicio_BCO
         {
             dataGridView1.MultiSelect = false;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+        private void modificarCliente_Click(object sender, EventArgs e)
+        {
+            ClienteAdd = new frmCliente();
+            Cliente _cliMod = dataGridView1.SelectedRows[0].DataBoundItem as Cliente;
+            ClienteAdd.modificarCliente(_cliMod, _banco.Clientes);
+            DialogResult resp = ClienteAdd.ShowDialog();
+            ClienteAdd.Show();
+            if (resp == DialogResult.OK)
+            {
+                ActualizarGrilla(dataGridView1, _banco.Clientes);
+                ClienteAdd.Close();
+            }
         }
     }
 }

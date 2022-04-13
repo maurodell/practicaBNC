@@ -23,7 +23,7 @@ namespace Ejercicio_BCO.Modelo
             Clientes = new List<Cliente>();
             Cuenta = new List<Cuenta>();
         }
-        public List<Cliente> Clientes;
+        public List<Cliente> Clientes { get; set; }
         public List<Cuenta> Cuenta { get; set; }
     }
 }
