@@ -45,6 +45,7 @@ namespace Ejercicio_BCO
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.btnAddCliente = new System.Windows.Forms.Button();
             this.btnSalirCliente = new System.Windows.Forms.Button();
+            this.btnMod = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -180,11 +181,23 @@ namespace Ejercicio_BCO
             this.btnSalirCliente.UseVisualStyleBackColor = true;
             this.btnSalirCliente.Click += new System.EventHandler(this.btnSalirCliente_Click);
             // 
+            // btnMod
+            // 
+            this.btnMod.Location = new System.Drawing.Point(42, 689);
+            this.btnMod.Name = "btnMod";
+            this.btnMod.Size = new System.Drawing.Size(181, 69);
+            this.btnMod.TabIndex = 16;
+            this.btnMod.Text = "Modificar";
+            this.btnMod.UseVisualStyleBackColor = true;
+            this.btnMod.Visible = false;
+            this.btnMod.Click += new System.EventHandler(this.btnMod_Click);
+            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 794);
+            this.Controls.Add(this.btnMod);
             this.Controls.Add(this.btnSalirCliente);
             this.Controls.Add(this.btnAddCliente);
             this.Controls.Add(this.textBox6);
@@ -226,5 +239,6 @@ namespace Ejercicio_BCO
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button btnAddCliente;
         private System.Windows.Forms.Button btnSalirCliente;
+        private System.Windows.Forms.Button btnMod;
     }
 }

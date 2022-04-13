@@ -1,4 +1,5 @@
 ﻿using Ejercicio_BCO.Modelo;
+using Ejercicio_BCO.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace Ejercicio_BCO
     {
         Banco _banco;
         frmCliente ClienteAdd;
+        ClienteABM amb;
         public frmClientes()
         {
             InitializeComponent();
@@ -30,12 +32,12 @@ namespace Ejercicio_BCO
         {
             ClienteAdd = new frmCliente();
             DialogResult resp = ClienteAdd.ShowDialog();
-            ClienteAdd.Show();
             if (resp == DialogResult.OK)
             {
                 ActualizarGrilla(dataGridView1, _banco.Clientes);
                 ClienteAdd.Close();
             }
+
         }
 
         private void frmClientes_Load(object sender, EventArgs e)
@@ -48,9 +50,9 @@ namespace Ejercicio_BCO
         {
             ClienteAdd = new frmCliente();
             Cliente _cliMod = dataGridView1.SelectedRows[0].DataBoundItem as Cliente;
-            ClienteAdd.modificarCliente(_cliMod, _banco.Clientes);
+            ClienteAdd.modificarCliente(_cliMod);
             DialogResult resp = ClienteAdd.ShowDialog();
-            ClienteAdd.Show();
+
             if (resp == DialogResult.OK)
             {
                 ActualizarGrilla(dataGridView1, _banco.Clientes);

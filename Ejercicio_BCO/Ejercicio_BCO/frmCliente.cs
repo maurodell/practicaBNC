@@ -1,4 +1,5 @@
 ﻿using Ejercicio_BCO.Modelo;
+using Ejercicio_BCO.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +16,13 @@ namespace Ejercicio_BCO
     {
         Cliente _cliente;
         Banco _banco;
+        ClienteABM _clienteABM;
         public frmCliente()
         {
             InitializeComponent();
             _cliente = new Cliente();
             _banco = Banco.Instanciar();
+            _clienteABM = new ClienteABM();
         }
 
         private void btnAddCliente_Click(object sender, EventArgs e)
@@ -32,7 +35,7 @@ namespace Ejercicio_BCO
             _cliente.pFechaNac = dtpNac.Value;
             textBox6.Text = Convert.ToString(_cliente.pEdad);
 
-            _banco.Clientes.Add(_cliente);
+            _clienteABM.Agregar(_cliente, _banco.Clientes);
 
             this.DialogResult = DialogResult.OK;
         }
@@ -41,27 +44,33 @@ namespace Ejercicio_BCO
         {
             this.Close();
         }
-        public void modificarCliente(Cliente clMod, List<Cliente> list)
+        public void modificarCliente(Cliente clMod)
         {
-            Cliente _aux = _banco.Clientes.Find(x => x.pDni == clMod.pDni);
-            if (_aux!=null)
-            {
-                txtDni.Text = clMod.pDni.ToString();
-                txtNom.Text = clMod.pNombre;
-                txtApe.Text = clMod.pApellido;
-                txtTel.Text = clMod.pTelefono;
-                txtMail.Text = clMod.pEmail;
-                dtpNac.Value = clMod.pFechaNac;
+            btnMod.Visible = true;
+            btnAddCliente.Visible = false;
 
-                list.Remove(_aux);
-                list.Add(clMod);
-            }
-            else
-            {
-                MessageBox.Show("El cliente no existe!");
-            }
+            txtDni.Text = clMod.pDni.ToString();
+            txtNom.Text = clMod.pNombre;
+            txtApe.Text = clMod.pApellido;
+            txtTel.Text = clMod.pTelefono;
+            txtMail.Text = clMod.pEmail;
+            dtpNac.Value = clMod.pFechaNac;
 
+            txtDni.Enabled = false;
+        }
 
+        private void btnMod_Click(object sender, EventArgs e)
+        {
+            _cliente = new Cliente() { 
+                    pDni = Convert.ToInt32(txtDni.Text), 
+                    pNombre = txtNom.Text,
+                    pApellido = txtApe.Text,
+                    pTelefono = txtTel.Text,
+                    pEmail = txtMail.Text,
+                    pFechaNac = dtpNac.Value};
+
+            _clienteABM.Modificar(_cliente, _banco.Clientes);
+            this.DialogResult = DialogResult.OK;
         }
     }
 }
