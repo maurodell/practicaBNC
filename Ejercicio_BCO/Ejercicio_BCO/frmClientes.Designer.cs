@@ -29,28 +29,21 @@ namespace Ejercicio_BCO
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.agregarCliente = new System.Windows.Forms.Button();
             this.modificarCliente = new System.Windows.Forms.Button();
             this.eliminarCliente = new System.Windows.Forms.Button();
             this.consultarCliente = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cmbDniCli = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Lista de clientes";
             // 
             // agregarCliente
             // 
             this.agregarCliente.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.agregarCliente.Location = new System.Drawing.Point(46, 855);
+            this.agregarCliente.Location = new System.Drawing.Point(49, 816);
             this.agregarCliente.Name = "agregarCliente";
             this.agregarCliente.Size = new System.Drawing.Size(224, 53);
             this.agregarCliente.TabIndex = 2;
@@ -61,7 +54,7 @@ namespace Ejercicio_BCO
             // modificarCliente
             // 
             this.modificarCliente.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.modificarCliente.Location = new System.Drawing.Point(309, 855);
+            this.modificarCliente.Location = new System.Drawing.Point(312, 816);
             this.modificarCliente.Name = "modificarCliente";
             this.modificarCliente.Size = new System.Drawing.Size(224, 53);
             this.modificarCliente.TabIndex = 3;
@@ -72,22 +65,24 @@ namespace Ejercicio_BCO
             // eliminarCliente
             // 
             this.eliminarCliente.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.eliminarCliente.Location = new System.Drawing.Point(566, 855);
+            this.eliminarCliente.Location = new System.Drawing.Point(569, 816);
             this.eliminarCliente.Name = "eliminarCliente";
             this.eliminarCliente.Size = new System.Drawing.Size(224, 53);
             this.eliminarCliente.TabIndex = 4;
             this.eliminarCliente.Text = "Eliminar";
             this.eliminarCliente.UseVisualStyleBackColor = true;
+            this.eliminarCliente.Click += new System.EventHandler(this.eliminarCliente_Click);
             // 
             // consultarCliente
             // 
             this.consultarCliente.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.consultarCliente.Location = new System.Drawing.Point(836, 855);
+            this.consultarCliente.Location = new System.Drawing.Point(932, 816);
             this.consultarCliente.Name = "consultarCliente";
             this.consultarCliente.Size = new System.Drawing.Size(224, 53);
             this.consultarCliente.TabIndex = 5;
             this.consultarCliente.Text = "Consultar";
             this.consultarCliente.UseVisualStyleBackColor = true;
+            this.consultarCliente.Click += new System.EventHandler(this.consultarCliente_Click);
             // 
             // dataGridView1
             // 
@@ -95,7 +90,7 @@ namespace Ejercicio_BCO
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(56, 118);
+            this.dataGridView1.Location = new System.Drawing.Point(33, 74);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 102;
@@ -103,35 +98,55 @@ namespace Ejercicio_BCO
             this.dataGridView1.Size = new System.Drawing.Size(2306, 661);
             this.dataGridView1.TabIndex = 6;
             // 
+            // cmbDniCli
+            // 
+            this.cmbDniCli.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cmbDniCli.FormattingEnabled = true;
+            this.cmbDniCli.Location = new System.Drawing.Point(1191, 822);
+            this.cmbDniCli.Name = "cmbDniCli";
+            this.cmbDniCli.Size = new System.Drawing.Size(370, 39);
+            this.cmbDniCli.TabIndex = 7;
+            this.cmbDniCli.SelectedIndexChanged += new System.EventHandler(this.cmbDniCli_SelectedIndexChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.cmbDniCli);
+            this.groupBox1.Controls.Add(this.agregarCliente);
+            this.groupBox1.Controls.Add(this.consultarCliente);
+            this.groupBox1.Controls.Add(this.modificarCliente);
+            this.groupBox1.Controls.Add(this.eliminarCliente);
+            this.groupBox1.Location = new System.Drawing.Point(27, 43);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(2393, 929);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Listado Clientes";
+            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(2449, 1035);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.consultarCliente);
-            this.Controls.Add(this.eliminarCliente);
-            this.Controls.Add(this.modificarCliente);
-            this.Controls.Add(this.agregarCliente);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(2449, 1017);
+            this.Controls.Add(this.groupBox1);
             this.Name = "frmClientes";
             this.Text = "..::CLIENTES::..";
             this.Load += new System.EventHandler(this.frmClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button agregarCliente;
         private System.Windows.Forms.Button modificarCliente;
         private System.Windows.Forms.Button eliminarCliente;
         private System.Windows.Forms.Button consultarCliente;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox cmbDniCli;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

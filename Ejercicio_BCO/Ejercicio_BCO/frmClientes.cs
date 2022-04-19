@@ -21,13 +21,22 @@ namespace Ejercicio_BCO
         {
             InitializeComponent();
             _banco = Banco.Instanciar();
+            //ActualizarComboBox(_banco.Clientes);
         }
         public void ActualizarGrilla(DataGridView dtgv, object obj)
         {
             dtgv.DataSource = null;
             dtgv.DataSource = obj;
         }
+        public void ActualizarComboBox(List<Cliente> lista)
+        {
+            cmbDniCli.Items.Clear();
 
+            foreach (var item in lista)
+            {
+                cmbDniCli.Items.Add(item.pDni);
+            }
+        }
         private void agregarCliente_Click(object sender, EventArgs e)
         {
             ClienteAdd = new frmCliente();
@@ -37,7 +46,7 @@ namespace Ejercicio_BCO
                 ActualizarGrilla(dataGridView1, _banco.Clientes);
                 ClienteAdd.Close();
             }
-
+            ActualizarComboBox(_banco.Clientes);
         }
 
         private void frmClientes_Load(object sender, EventArgs e)
@@ -55,9 +64,42 @@ namespace Ejercicio_BCO
 
             if (resp == DialogResult.OK)
             {
-                ActualizarGrilla(dataGridView1, _banco.Clientes);
+                ActualizarComboBox(_banco.Clientes);
+                ActualizarGrilla(dataGridView1, _banco.Clientes);            
                 ClienteAdd.Close();
             }
+        }
+
+        private void eliminarCliente_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Columns.Count>0)
+            {
+                amb = new ClienteABM();
+                Cliente eliminar = dataGridView1.SelectedRows[0].DataBoundItem as Cliente;
+                amb.Borrar(eliminar, _banco.Clientes);
+
+                ActualizarGrilla(dataGridView1, _banco.Clientes);
+                ActualizarComboBox(_banco.Clientes);
+            }
+            else
+            {
+                MessageBox.Show("Lista de clientes vacia");
+            }
+
+
+        }
+
+        private void cmbDniCli_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void consultarCliente_Click(object sender, EventArgs e)
+        {
+            Cliente resultado = _banco.Clientes.Find(x => x.pDni == Convert.ToInt32(cmbDniCli.SelectedItem));
+            MessageBox.Show("Cliente\n"+
+                            "Nombre: "+resultado.pNombre+"\n"+
+                            "Apellido: "+resultado.pApellido);
         }
     }
 }

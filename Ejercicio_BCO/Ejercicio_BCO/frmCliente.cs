@@ -33,7 +33,6 @@ namespace Ejercicio_BCO
             _cliente.pTelefono = txtTel.Text;
             _cliente.pEmail = txtMail.Text;
             _cliente.pFechaNac = dtpNac.Value;
-            textBox6.Text = Convert.ToString(_cliente.pEdad);
 
             _clienteABM.Agregar(_cliente, _banco.Clientes);
 

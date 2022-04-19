@@ -34,7 +34,6 @@ namespace Ejercicio_BCO
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtDni = new System.Windows.Forms.TextBox();
             this.txtNom = new System.Windows.Forms.TextBox();
@@ -42,7 +41,6 @@ namespace Ejercicio_BCO
             this.txtTel = new System.Windows.Forms.TextBox();
             this.txtMail = new System.Windows.Forms.TextBox();
             this.dtpNac = new System.Windows.Forms.DateTimePicker();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.btnAddCliente = new System.Windows.Forms.Button();
             this.btnSalirCliente = new System.Windows.Forms.Button();
             this.btnMod = new System.Windows.Forms.Button();
@@ -93,15 +91,6 @@ namespace Ejercicio_BCO
             this.label5.TabIndex = 4;
             this.label5.Text = "Email:";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(88, 596);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 32);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Edad:";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -148,18 +137,10 @@ namespace Ejercicio_BCO
             // 
             // dtpNac
             // 
-            this.dtpNac.Location = new System.Drawing.Point(381, 510);
+            this.dtpNac.Location = new System.Drawing.Point(94, 562);
             this.dtpNac.Name = "dtpNac";
-            this.dtpNac.Size = new System.Drawing.Size(200, 38);
+            this.dtpNac.Size = new System.Drawing.Size(494, 38);
             this.dtpNac.TabIndex = 12;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(227, 593);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(361, 38);
-            this.textBox6.TabIndex = 13;
             // 
             // btnAddCliente
             // 
@@ -200,7 +181,6 @@ namespace Ejercicio_BCO
             this.Controls.Add(this.btnMod);
             this.Controls.Add(this.btnSalirCliente);
             this.Controls.Add(this.btnAddCliente);
-            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.dtpNac);
             this.Controls.Add(this.txtMail);
             this.Controls.Add(this.txtTel);
@@ -208,7 +188,6 @@ namespace Ejercicio_BCO
             this.Controls.Add(this.txtNom);
             this.Controls.Add(this.txtDni);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -228,7 +207,6 @@ namespace Ejercicio_BCO
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtDni;
         private System.Windows.Forms.TextBox txtNom;
@@ -236,7 +214,6 @@ namespace Ejercicio_BCO
         private System.Windows.Forms.TextBox txtTel;
         private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.DateTimePicker dtpNac;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button btnAddCliente;
         private System.Windows.Forms.Button btnSalirCliente;
         private System.Windows.Forms.Button btnMod;

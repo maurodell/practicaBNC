@@ -31,6 +31,9 @@ namespace Ejercicio_BCO.Modelo
             return (fechaActual < pFechaNac.AddYears(edadC)) ? edadC-- : edadC;
         }
 
-
+        public override string ToString()
+        {
+            return pDni.ToString();
+        }
     }
 }
